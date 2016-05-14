@@ -1,0 +1,6 @@
+name: WHint
+main: WHint\Main
+version: 1.1.1
+api: [1.0.0]
+load: POSTWORLD
+author: Wshape1
