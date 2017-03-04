@@ -7,7 +7,7 @@ use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\Listener;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
-use pocketmine\utils\TextFormat;
+use pocketmine\utils\TextFormat as CL;
 use pocketmine\level\Level;
 use pocketmine\Server;
 use pocketmine\utils\Config;
@@ -17,10 +17,10 @@ class Main extends PluginBase implements Listener{
 
 
  public function onEnable(){
-$this->getLogger()->info(TextFormat::BLUE."【WHint】感谢使用...");
+$this->getLogger()->info(CL::BLUE."[WHint]感谢使用...作者Wshape1");
 @mkdir($this->getDataFolder(),0777,true);
 		@mkdir($this->getDataFolder());
- $this->Config = new Config($this->getDataFolder()."Config.yml", Config::YAML, array(
+ $this->Config = new Config($this->getDataFolder()."Config.yml", Config::YAML, [
                 "进退服中间提示"=>"服务器" ,
                 "OP"=>"OP",
                 "Player"=>"Player",
@@ -30,7 +30,7 @@ $this->getLogger()->info(TextFormat::BLUE."【WHint】感谢使用...");
 				"OP进服全服公告"=>"§c进入§aMinecraftPE服务器！\n §c有事可以请教他哦!" ,
 				"OP退服全服公告"=>"§c退出§aMinecraftPE服务器！",
 				"玩家进服欢迎语"=>"§e欢迎进入MinecraftPE服务器",
- ));
+ ]);
 
 		$this->getServer()->getPluginManager()->registerEvents( $this , $this );
 }
